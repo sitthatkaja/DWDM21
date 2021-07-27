@@ -1,0 +1,2430 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "DATA101(Chapter2).ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyN0qj3+2lHknz+Nkq7VX5H4",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/sitthatkaja/DWDM21/blob/main/%E0%B8%88%E0%B8%9A%20basic%20python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Eamjjz7tz6lu"
+      },
+      "source": [
+        "# **DATA101(Chapter2)**\n",
+        "\n",
+        "*Text ส่วนใหญ่จะเป็นภาษา markdown*\n",
+        "\n",
+        "***"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "S87I38EItooJ"
+      },
+      "source": [
+        "#### **ข้อดีหนึ่งของ python คือมี package สำหรับงานต่างๆมากมาย**\n",
+        "\n",
+        "ซึ่ง pandas เป็น package สำหรับการทำงานกับข้อมูลที่อยู่ในรูปแบบข้อมูล โดย pandas จะเรียกตารางนั้นว่า dataframe"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "X5R85BzVr67K"
+      },
+      "source": [
+        "import pandas as pd #วิธีเรียกใช้ package = import ชื่อ packages as ชื่อย่อ"
+      ],
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Klmtm4PbuydG"
+      },
+      "source": [
+        "*ไฟล์หลักในวิชานี้จะเป็น .csv (comma separated values)*\n",
+        "\n",
+        "*ไฟล์ชนิดนี้เก็บข้อมูลเป็นตารางที่สามารถเข้าใจได้ง่าย*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 141
+        },
+        "id": "hj9hYXBgvZu2",
+        "outputId": "972231ff-da1d-42d3-aa07-71c637a2c26f"
+      },
+      "source": [
+        "data_df = pd.read_csv('data.csv')\n",
+        "data_df"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "<div>\n",
+              "<style scoped>\n",
+              "    .dataframe tbody tr th:only-of-type {\n",
+              "        vertical-align: middle;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe tbody tr th {\n",
+              "        vertical-align: top;\n",
+              "    }\n",
+              "\n",
+              "    .dataframe thead th {\n",
+              "        text-align: right;\n",
+              "    }\n",
+              "</style>\n",
+              "<table border=\"1\" class=\"dataframe\">\n",
+              "  <thead>\n",
+              "    <tr style=\"text-align: right;\">\n",
+              "      <th></th>\n",
+              "      <th>name</th>\n",
+              "      <th>age</th>\n",
+              "      <th>city</th>\n",
+              "    </tr>\n",
+              "  </thead>\n",
+              "  <tbody>\n",
+              "    <tr>\n",
+              "      <th>0</th>\n",
+              "      <td>Tom</td>\n",
+              "      <td>27</td>\n",
+              "      <td>Khon Kaen</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>1</th>\n",
+              "      <td>Paul</td>\n",
+              "      <td>15</td>\n",
+              "      <td>Bangkok</td>\n",
+              "    </tr>\n",
+              "    <tr>\n",
+              "      <th>2</th>\n",
+              "      <td>Sarah</td>\n",
+              "      <td>49</td>\n",
+              "      <td>London</td>\n",
+              "    </tr>\n",
+              "  </tbody>\n",
+              "</table>\n",
+              "</div>"
+            ],
+            "text/plain": [
+              "    name  age       city\n",
+              "0    Tom   27  Khon Kaen\n",
+              "1   Paul   15    Bangkok\n",
+              "2  Sarah   49     London"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 2
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fM5obFWTzua5"
+      },
+      "source": [
+        "# **Basic Python**\n",
+        "## **Variable**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "JEt5_saX1mKS"
+      },
+      "source": [
+        "***ข้อกำหนดในการตั้งชื่อตัวแปร***\n",
+        "\n",
+        "- ชื่อห้ามมีเว้นวรรค\n",
+        "- ใช้ภาษาอังกฤษ\n",
+        "- ตัวเล็กกับตัวใหญ่ แตกต่างกัน (Case sensitive)\n",
+        "- ห้ามใช้ตัวเลขเป็นตัวหน้า"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_9xvNRGw0Sur"
+      },
+      "source": [
+        "variable_a = 12\n",
+        "variable_b = 'abcde' #เรียกว่า Quote\n",
+        "variable_c = variable_a"
+      ],
+      "execution_count": 3,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qtDaO9-S0S33",
+        "outputId": "8087c96b-4a3a-4e19-ab98-1920487ae872"
+      },
+      "source": [
+        "variable_a"
+      ],
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "12"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "Hd3JCzJ31ddL",
+        "outputId": "82c9e275-3263-4c44-866c-016d9d3899e9"
+      },
+      "source": [
+        "variable_b"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'abcde'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bdTvpTw-1fSM",
+        "outputId": "3fd44421-5b3e-45c4-d90d-2ebcc2b1660a"
+      },
+      "source": [
+        "variable_c"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "12"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_0WcIrCK4JYt"
+      },
+      "source": [
+        "variable_a = 12\n",
+        "variable_b = 'abcde' #เรียกว่า Quote\n",
+        "variable_c = variable_a\n",
+        "variable_d = -41.2\n",
+        "variable_4 = \"KKU\" #เรียกว่า Double Quote"
+      ],
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CI5Mva614gOQ",
+        "outputId": "f99cd9e8-a81a-459d-cd6e-f87b04965e40"
+      },
+      "source": [
+        "variable_x = variable_c + variable_d\n",
+        "print(variable_x)"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "-29.200000000000003\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O2crxghL6e--",
+        "outputId": "ad9f700e-3b7e-42d9-a170-e90b0b0a85b9"
+      },
+      "source": [
+        "print(variable_b + variable_4)"
+      ],
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "abcdeKKU\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "mNnPD-FZ7FCf"
+      },
+      "source": [
+        "## **Casting**\n",
+        "\n",
+        "การเปลี่ยนชนิดตัวแปร"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zEsIk-Nh7S37",
+        "outputId": "ebb8c839-5d5f-4423-856b-cedd41f467e0"
+      },
+      "source": [
+        "print(variable_x)\n",
+        "print(int(variable_x))"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "-29.200000000000003\n",
+            "-29\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rpRE6LSB7uMT",
+        "outputId": "09a12975-40c8-4677-9071-5f4b4547b694"
+      },
+      "source": [
+        "V_X = str(variable_x)\n",
+        "print(V_X)"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "-29.200000000000003\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 36
+        },
+        "id": "ML7t0Sk38cLB",
+        "outputId": "c38ce8e1-1f57-4855-a55a-1cdcf2c8896e"
+      },
+      "source": [
+        "V_X"
+      ],
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'-29.200000000000003'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kEyPTzaK8iih",
+        "outputId": "134aa070-8f98-4b94-eebb-07c35470eef7"
+      },
+      "source": [
+        "float(V_X)"
+      ],
+      "execution_count": 13,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "-29.200000000000003"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 13
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "NvIKevUg9Ca0"
+      },
+      "source": [
+        "## **Data Structure**\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "LcxlJga89BqT"
+      },
+      "source": [
+        "list_a = [1,2,0.2,'abs'] # [] square brackets\n",
+        "list_b = [2,'xyz',list_a,[1,2,0.0]]"
+      ],
+      "execution_count": 14,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i1wsznBl900A",
+        "outputId": "3f917b4d-2cc5-4929-bc3f-002ceb1bcaaf"
+      },
+      "source": [
+        "list_a"
+      ],
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 0.2, 'abs']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 15
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "h8cVzTnE92bS",
+        "outputId": "8cfa1812-28a5-421e-e7e9-430621c6c716"
+      },
+      "source": [
+        "list_b"
+      ],
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[2, 'xyz', [1, 2, 0.2, 'abs'], [1, 2, 0.0]]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YFH8d7kM-KOr",
+        "outputId": "171a3ce0-ef0b-40eb-af30-ee13fd071f37"
+      },
+      "source": [
+        "len(list_b) #สามารถดูความยาว (ดูว่ามีสมาชิกกี่ตัว ) ของ list ได้ "
+      ],
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "4"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GrXQp0F6-XUM",
+        "outputId": "ef7865a6-f379-4fb5-b759-0a80a1ff7183"
+      },
+      "source": [
+        "list_b[3]"
+      ],
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 0.0]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QcWYusRd-x6p",
+        "outputId": "68cca2f5-80c3-4906-d07c-4dcbf82e5726"
+      },
+      "source": [
+        "list_b[3][1]"
+      ],
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "2"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "wdeWU1Au-2O7"
+      },
+      "source": [
+        "*หมายเหตุ : string คือ list ของตัวหนังสือ*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "i06dFckQ-_C5"
+      },
+      "source": [
+        "a = 'Stat KKU'"
+      ],
+      "execution_count": 20,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "trhkuvbl_CYf",
+        "outputId": "632a16af-5d5d-493e-e290-c3730fbff5f8"
+      },
+      "source": [
+        "a[4]"
+      ],
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "' '"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 21
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kC8vt_Nl_jHA"
+      },
+      "source": [
+        "## **วิธีการสร้าง list แบบที่ 2 (list ว่าง)**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "naCqrZzZ_qma"
+      },
+      "source": [
+        "list_c = list()\n",
+        "list_d = [ ]"
+      ],
+      "execution_count": 22,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3g3LQmN8_3zq",
+        "outputId": "01050fe7-fdcd-4aae-bca1-54bca0c32fad"
+      },
+      "source": [
+        "list_c"
+      ],
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Dr9YGq50AA1Z",
+        "outputId": "0042251a-f246-4535-e0ec-852a1e71bf10"
+      },
+      "source": [
+        "list_d"
+      ],
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ujJnV4cNAjB8"
+      },
+      "source": [
+        "*เติมค่าลงไปใน list (.append())*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "pRYf5gSIAcXB"
+      },
+      "source": [
+        "list_d.append('a')"
+      ],
+      "execution_count": 25,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6hlVNoaXAv5s",
+        "outputId": "18b1fa0f-2bfc-466d-c190-9b68639a3a89"
+      },
+      "source": [
+        "list_d"
+      ],
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['a']"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 26
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KedJyGAsA4wM"
+      },
+      "source": [
+        "list_d.append(56)"
+      ],
+      "execution_count": 27,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nfZjQTgAA8Z3",
+        "outputId": "0b5a9c41-0854-46c2-baab-e4ec8ec34a9e"
+      },
+      "source": [
+        "list_d"
+      ],
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['a', 56]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RRDw6KQSBGhW"
+      },
+      "source": [
+        "**การชี้ค่าใน list (indexing)**\n",
+        "\n",
+        "- ใช้ลำดับในการชี้\n",
+        "- ลำดับเริ่มจาก 0\n",
+        "- สามารถชี้จากข้างหลังได้โดยใช้ negative index"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c9go2rdhBY-e",
+        "outputId": "1826bf1d-b471-4054-ee57-908bbcdd96d5"
+      },
+      "source": [
+        "list_b"
+      ],
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[2, 'xyz', [1, 2, 0.2, 'abs'], [1, 2, 0.0]]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C4te0bNUBceB",
+        "outputId": "5f7b344f-67e6-43a8-b906-9b461fccbe0a"
+      },
+      "source": [
+        "list_b[-1]"
+      ],
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 0.0]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 30
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PMLoaT-7CNzN"
+      },
+      "source": [
+        "## **List Slicing**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "d8TiYn9eCNFy"
+      },
+      "source": [
+        "list_ex = [1,2,3,5,6,8,-1,20,50,0]"
+      ],
+      "execution_count": 31,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kf7ghvL8C2ye"
+      },
+      "source": [
+        "*เราจะตัด list โดยเอาตั้งแต่ [ตัวหน้า:ตัวก่อนตัวหลัง]*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZzM4VhmUCa6Q",
+        "outputId": "43786451-3b29-4fac-dd05-cbcb6b481086"
+      },
+      "source": [
+        "list_ex[1:6]"
+      ],
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[2, 3, 5, 6, 8]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 32
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QfnU48RcDYzE",
+        "outputId": "bd88deef-3747-4003-c80d-84ceb41d944d"
+      },
+      "source": [
+        "list_ex[4:]"
+      ],
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[6, 8, -1, 20, 50, 0]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 33
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UY4nssQ3DiY9",
+        "outputId": "601bd51d-b7f2-41b8-ddf8-57d2a3a10a9f"
+      },
+      "source": [
+        "list_ex[:6]"
+      ],
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 3, 5, 6, 8]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 34
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Ne6eEJHYEU0d"
+      },
+      "source": [
+        "*การใช้ 3 จุด [จุดเริ่มต้น:จุดสุดท้าย:step]*"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ygLADEs9D5EP",
+        "outputId": "b5c4348e-b012-460d-fa21-543b8d6ea3f2"
+      },
+      "source": [
+        "list_ex[::2]"
+      ],
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 3, 6, -1, 50]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 35
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JV3KobltEjxU",
+        "outputId": "f867f11f-9406-4a1e-89a9-ad7f35510514"
+      },
+      "source": [
+        "list_ex [::-1] #กลับ list"
+      ],
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 50, 20, -1, 8, 6, 5, 3, 2, 1]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 36
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "AD7wEKRrE7E1",
+        "outputId": "2ba2f44b-c75e-4ac3-9638-5214efbeac7a"
+      },
+      "source": [
+        "a"
+      ],
+      "execution_count": 37,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'Stat KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 37
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "xVG2OSkUE8ZR",
+        "outputId": "cd9fc443-5e47-4508-ab6e-88b4cb28f230"
+      },
+      "source": [
+        "a[5:]"
+      ],
+      "execution_count": 38,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 38
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "_DFFmmhBE8g-",
+        "outputId": "bb4df8c3-9c1b-4df7-e7ba-a9b4301ae1a8"
+      },
+      "source": [
+        "a[-3:]"
+      ],
+      "execution_count": 39,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 39
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "HJf_alwYF9Fp",
+        "outputId": "c659ad34-0b69-46b5-8cfa-aae54a63e46e"
+      },
+      "source": [
+        "a[5:8]"
+      ],
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 40
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "rAQtTsFGGLzW",
+        "outputId": "e5498b11-6eea-440f-872a-8c805162431f"
+      },
+      "source": [
+        "a[5::]"
+      ],
+      "execution_count": 41,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 41
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "E0Wek0ZvGOU_",
+        "outputId": "4e388d20-ae20-407f-9b34-6a9935756183"
+      },
+      "source": [
+        "a[-3::]"
+      ],
+      "execution_count": 42,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 42
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "RwY3tMWfGjo_",
+        "outputId": "320fc5ee-c6d9-46b4-9a2f-4b93414545ed"
+      },
+      "source": [
+        "a[-3::1]"
+      ],
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "'KKU'"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 43
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "17fFIbapG351"
+      },
+      "source": [
+        "## **List + List**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ALJ_LuMCG2L2",
+        "outputId": "26fa69ab-44a1-4184-e411-67cb5acc4fa8"
+      },
+      "source": [
+        "print(list_a)\n",
+        "print(list_b)"
+      ],
+      "execution_count": 44,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[1, 2, 0.2, 'abs']\n",
+            "[2, 'xyz', [1, 2, 0.2, 'abs'], [1, 2, 0.0]]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BJ0L51xVHDbC",
+        "outputId": "37777e04-f5a5-430a-8fa1-abcdadfe19d3"
+      },
+      "source": [
+        "list_a + list_b"
+      ],
+      "execution_count": 45,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 0.2, 'abs', 2, 'xyz', [1, 2, 0.2, 'abs'], [1, 2, 0.0]]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 45
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9rWrmGz0LN6o"
+      },
+      "source": [
+        "## **Format string**\n",
+        "\n",
+        "วิธีการเขียนคือ\n",
+        "\n",
+        "```\n",
+        "f'string{ตัวแปร}'\n",
+        "```\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "230s7C92LYnb",
+        "outputId": "d1b6587f-ea62-4de6-cb54-4b021fa33350"
+      },
+      "source": [
+        "f'ตัวแปร list_a มีค่าคือ {list_a}' # {} เรียกว่า curly brackets"
+      ],
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            },
+            "text/plain": [
+              "\"ตัวแปร list_a มีค่าคือ [1, 2, 0.2, 'abs']\""
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 46
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "BCys0RO4JOaQ"
+      },
+      "source": [
+        "## **Loop** \n",
+        "\n",
+        "```\n",
+        "for ตัวแปรที่จะรับค่าจาก list in list (list ที่จะนำมาวนลูป) :\n",
+        "  do something\n",
+        "  do another\n",
+        "do other things\n",
+        "```\n",
+        "\n",
+        "เช่น\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IEwkgYdKJxx-",
+        "outputId": "42cf1eb7-b787-492f-c1aa-f4fa6782b2c1"
+      },
+      "source": [
+        "for i in [1,2,3,4,5]:\n",
+        "  print(i+1)"
+      ],
+      "execution_count": 47,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yVugfb15MXXg",
+        "outputId": "eb61c945-526c-409a-87a8-e2f4b97da66c"
+      },
+      "source": [
+        "for x in [1,2,3,4,5]:\n",
+        "  print (f'ค่าตัวแปร x คือ {x} และ x+2 = {x+2}')"
+      ],
+      "execution_count": 48,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "ค่าตัวแปร x คือ 1 และ x+2 = 3\n",
+            "ค่าตัวแปร x คือ 2 และ x+2 = 4\n",
+            "ค่าตัวแปร x คือ 3 และ x+2 = 5\n",
+            "ค่าตัวแปร x คือ 4 และ x+2 = 6\n",
+            "ค่าตัวแปร x คือ 5 และ x+2 = 7\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "l0xl5EuhM_1a",
+        "outputId": "83ee4ede-ef31-42fe-98e3-88d66e74d091"
+      },
+      "source": [
+        "list5 = [1,2,3,4,5]\n",
+        "for x in list5:\n",
+        "  print (f'ค่าตัวแปร x คือ {x} และ x+2 = {x+2}')"
+      ],
+      "execution_count": 49,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "ค่าตัวแปร x คือ 1 และ x+2 = 3\n",
+            "ค่าตัวแปร x คือ 2 และ x+2 = 4\n",
+            "ค่าตัวแปร x คือ 3 และ x+2 = 5\n",
+            "ค่าตัวแปร x คือ 4 และ x+2 = 6\n",
+            "ค่าตัวแปร x คือ 5 และ x+2 = 7\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_pBjMNIzNI7u",
+        "outputId": "7302636d-5b40-4697-9aff-eb8dfce25516"
+      },
+      "source": [
+        "list(range(10))"
+      ],
+      "execution_count": 50,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 50
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Wq-b51snNXGQ",
+        "outputId": "33f37363-56f8-4dad-90ba-72f0e5cc0a66"
+      },
+      "source": [
+        "for i in range (2,7):\n",
+        "  print(i)"
+      ],
+      "execution_count": 51,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pdCJ-SsIOW1F",
+        "outputId": "ace6b870-26f8-4ca2-e7d7-013750ca4ecd"
+      },
+      "source": [
+        "for i in range (2,7,2):\n",
+        "  print(i)"
+      ],
+      "execution_count": 52,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "2\n",
+            "4\n",
+            "6\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0RrYdcljOZh7",
+        "outputId": "9d9a2bbf-5a25-4ccb-faea-e82a6fe4f61d"
+      },
+      "source": [
+        "for i in range (5):\n",
+        "  print('hahaha')"
+      ],
+      "execution_count": 53,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "hahaha\n",
+            "hahaha\n",
+            "hahaha\n",
+            "hahaha\n",
+            "hahaha\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Dd2KyDQnOlxL",
+        "outputId": "912100c0-cd65-43f2-c367-d13974a4b8e7"
+      },
+      "source": [
+        "for i in range (5):\n",
+        "  print('hahaha')\n",
+        "  x = i+3\n",
+        "  print(f'i={i} x={x}')"
+      ],
+      "execution_count": 54,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "hahaha\n",
+            "i=0 x=3\n",
+            "hahaha\n",
+            "i=1 x=4\n",
+            "hahaha\n",
+            "i=2 x=5\n",
+            "hahaha\n",
+            "i=3 x=6\n",
+            "hahaha\n",
+            "i=4 x=7\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "gWqvVn9qPEDr"
+      },
+      "source": [
+        "## **Nested loop**\n",
+        "\n",
+        "ลูปซ้อนลูป"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sd4c38yiPLrw",
+        "outputId": "43547bf5-151f-4a2b-d1a3-0aaf3ade5ad3"
+      },
+      "source": [
+        "for i in range(3):\n",
+        "  print(f'now i = {i}')\n",
+        "  print( 'start j loop')\n",
+        "  for j in range(4):\n",
+        "    print(f'i = {i} j = {j} i+j = {i+j}')\n",
+        "  print('end j loop')"
+      ],
+      "execution_count": 55,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "now i = 0\n",
+            "start j loop\n",
+            "i = 0 j = 0 i+j = 0\n",
+            "i = 0 j = 1 i+j = 1\n",
+            "i = 0 j = 2 i+j = 2\n",
+            "i = 0 j = 3 i+j = 3\n",
+            "end j loop\n",
+            "now i = 1\n",
+            "start j loop\n",
+            "i = 1 j = 0 i+j = 1\n",
+            "i = 1 j = 1 i+j = 2\n",
+            "i = 1 j = 2 i+j = 3\n",
+            "i = 1 j = 3 i+j = 4\n",
+            "end j loop\n",
+            "now i = 2\n",
+            "start j loop\n",
+            "i = 2 j = 0 i+j = 2\n",
+            "i = 2 j = 1 i+j = 3\n",
+            "i = 2 j = 2 i+j = 4\n",
+            "i = 2 j = 3 i+j = 5\n",
+            "end j loop\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "nsDD8EaYJQfZ"
+      },
+      "source": [
+        "## **Condition (If Statement)**\n",
+        "\n",
+        "\n",
+        "\n",
+        "```\n",
+        "if เงื่อนไขที่จะตรวจสอบ ( ==, !=, <, >, <=, >=) :\n",
+        "  ถ้าเงื่อนไขเป็นจริง ทำงาน 1\n",
+        "  ถ้าเงื่อนไขเป็นจริง ทำงาน 2\n",
+        "elif เงื่อนไขที่จะตรวจสอบต่อไปถ้าเงื่อนไขข้างบนไม่เป็นจริง:\n",
+        "  ถ้าเงื่อนไขเป็นจริง ทำงาน a1\n",
+        "  ถ้าเงื่อนไขเป็นจริง ทำงาน a2\n",
+        "elif เงื่อนไขที่จะตรวจสอบต่อไปถ้าเงื่อนไขข้างบนไม่เป็นจริง:\n",
+        "  ถ้าเงื่อนไขเป็นจริง ทำงาน b1\n",
+        "  ถ้าเงื่อนไขเป็นจริง ทำงาน b2\n",
+        "else : #ตรวจสอบเงื่อนไขข้างบนแล้วไม่เป็นจริง\n",
+        "  ทำงานที่ x\n",
+        "```\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "75THmnKnF6Jb"
+      },
+      "source": [
+        "stringx = 'ajaiopakdfapodkapdfka'\n",
+        "\n",
+        "if len(stringx) > 30:\n",
+        "  print (f'{string} is longer than 30 charecters')"
+      ],
+      "execution_count": 56,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AqFV2L2iHVy4",
+        "outputId": "4dba2664-82d1-47a8-a51b-314b4c6cac4e"
+      },
+      "source": [
+        "stringx = 'ajaiopakdfapodkapdfka'\n",
+        "\n",
+        "if len(stringx) > 100:\n",
+        "  print (f'{string} is longer than 100 charecters')\n",
+        "else :\n",
+        "  print (f'{stringx} is {len(stringx)} charecters long')"
+      ],
+      "execution_count": 57,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "ajaiopakdfapodkapdfka is 21 charecters long\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HgY-r-eULIVm",
+        "outputId": "2f6d6338-5efe-4a8d-9b43-cd576bb1bf9d"
+      },
+      "source": [
+        "password = '12345'\n",
+        "\n",
+        "input_pass = '123'\n",
+        "if input_pass == password:\n",
+        "  print('Welcome!')\n",
+        "elif len(input_pass) > len(password) :\n",
+        "  print ('Too long, Try again')\n",
+        "elif len(input_pass) < len(password) :\n",
+        "  print ('Too short, Try again')\n",
+        "else :\n",
+        "  print ('Wrong passwords, Try again')"
+      ],
+      "execution_count": 58,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Too short, Try again\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "EisQjh_ELJF9"
+      },
+      "source": [
+        "Quiz 1 : หา min"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "S26t5sv_NkZd",
+        "outputId": "72b14ad6-1884-4cdf-dda3-e5d7312efe6f"
+      },
+      "source": [
+        "list_ex = [1,5,9,-19,-2,0] # หาค่าน้อยที่สุดใน list โดยไม่ใช้ function min\n",
+        "\n",
+        "for x in list_ex:\n",
+        "  if x == -19:\n",
+        "    print (f'ค่าตัวแปร x คือ {x} คือค่าตัวแปรที่น้อยที่สุด ')\n",
+        "  else :\n",
+        "    print (f'ค่าตัวแปร x คือ {x} ไม่ใช่ค่าตัวแปรที่น้อยที่สุด')"
+      ],
+      "execution_count": 59,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "ค่าตัวแปร x คือ 1 ไม่ใช่ค่าตัวแปรที่น้อยที่สุด\n",
+            "ค่าตัวแปร x คือ 5 ไม่ใช่ค่าตัวแปรที่น้อยที่สุด\n",
+            "ค่าตัวแปร x คือ 9 ไม่ใช่ค่าตัวแปรที่น้อยที่สุด\n",
+            "ค่าตัวแปร x คือ -19 คือค่าตัวแปรที่น้อยที่สุด \n",
+            "ค่าตัวแปร x คือ -2 ไม่ใช่ค่าตัวแปรที่น้อยที่สุด\n",
+            "ค่าตัวแปร x คือ 0 ไม่ใช่ค่าตัวแปรที่น้อยที่สุด\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HdYNeia5Sn1N",
+        "outputId": "7f5e6c6f-e76e-491f-9823-138a647d339f"
+      },
+      "source": [
+        "#เฉลย\n",
+        "list_ex = [1,5,9,-19,-2,0] # หาค่าน้อยที่สุดใน list โดยไม่ใช้ function min\n",
+        "\n",
+        "#ANS\n",
+        "min = 10000000\n",
+        "for x in list_ex:\n",
+        "  print(f'now i = {i}, min = {min}')\n",
+        "  if x < min:\n",
+        "    print(f'i < min, update min -->{i}')\n",
+        "    min = x\n",
+        "  else:\n",
+        "    print('not update')\n",
+        "  print('end condition, go to next i')\n",
+        "print(min)"
+      ],
+      "execution_count": 60,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "now i = 2, min = 10000000\n",
+            "i < min, update min -->2\n",
+            "end condition, go to next i\n",
+            "now i = 2, min = 1\n",
+            "not update\n",
+            "end condition, go to next i\n",
+            "now i = 2, min = 1\n",
+            "not update\n",
+            "end condition, go to next i\n",
+            "now i = 2, min = 1\n",
+            "i < min, update min -->2\n",
+            "end condition, go to next i\n",
+            "now i = 2, min = -19\n",
+            "not update\n",
+            "end condition, go to next i\n",
+            "now i = 2, min = -19\n",
+            "not update\n",
+            "end condition, go to next i\n",
+            "-19\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "0Z0EFBECLQxo"
+      },
+      "source": [
+        "HW3 : ตัดเกรด"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HgISQfxrVsxL",
+        "outputId": "061a6bd0-2821-4bd5-9f65-ce5be60454bc"
+      },
+      "source": [
+        "score = [49,65,70,95,82,55,89,20,77,77,81,59,10]\n",
+        "\n",
+        "for i in score:\n",
+        "  if i >= 80:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ')\n",
+        "  elif i >=75:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด B+ ยินดีด้วย แต่ปกติไม่มีใครสนใจเพราะเป็นได้แค่คนสำรอง')\n",
+        "  elif i >=70:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด B ยินดีด้วย ก็เก่งในสายตาทุกคน ยกเว้นคนในใจ')\n",
+        "  elif i >=65:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด C+ ยินดีด้วย แต่ก็ยังดีไม่พอที่เธอจะหันมาสนใจ')\n",
+        "  elif i >=60:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด C ยินดีด้วย ความพยายามอยู่ที่ไหน ก็ไม่ได้ใจเธออยู่ดี')\n",
+        "  elif i >=55:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด D+ ยินดีด้วย แต่เค้าก็ไม่สนใจคุณหรอกนะ')\n",
+        "  elif i >=50:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด D ยินดีด้วย แต่ D หมายถึงหมานะ คุณเป็นหมาเวลาเพื่อนกลับไปคบกับแฟนเก่าหรอ บรู้ววว')\n",
+        "  else:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ')"
+      ],
+      "execution_count": 80,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "คะแนนของคุณคือ 49 คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ\n",
+            "คะแนนของคุณคือ 65 คุณได้เกรด C+ ยินดีด้วย แต่ก็ยังดีไม่พอที่เธอจะหันมาสนใจ\n",
+            "คะแนนของคุณคือ 70 คุณได้เกรด B ยินดีด้วย ก็เก่งในสายตาทุกคน ยกเว้นคนในใจ\n",
+            "คะแนนของคุณคือ 95 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนนของคุณคือ 82 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนนของคุณคือ 55 คุณได้เกรด D+ ยินดีด้วย แต่เค้าก็ไม่สนใจคุณหรอกนะ\n",
+            "คะแนนของคุณคือ 89 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนนของคุณคือ 20 คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ\n",
+            "คะแนนของคุณคือ 77 คุณได้เกรด B+ ยินดีด้วย แต่ปกติไม่มีใครสนใจเพราะเป็นได้แค่คนสำรอง\n",
+            "คะแนนของคุณคือ 77 คุณได้เกรด B+ ยินดีด้วย แต่ปกติไม่มีใครสนใจเพราะเป็นได้แค่คนสำรอง\n",
+            "คะแนนของคุณคือ 81 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนนของคุณคือ 59 คุณได้เกรด D+ ยินดีด้วย แต่เค้าก็ไม่สนใจคุณหรอกนะ\n",
+            "คะแนนของคุณคือ 10 คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "RIBEmTHuJViT"
+      },
+      "source": [
+        "## **Function**"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "TtC3WBSgw4tg"
+      },
+      "source": [
+        "## **Function**\n",
+        "\n",
+        "\n",
+        "\n",
+        "```python\n",
+        "def ชื่อฟังก์ชัน (input1, input2,....):\n",
+        "  งาน xxx\n",
+        "  งาน yyy\n",
+        "  return output\n",
+        "```\n",
+        "\n",
+        "ส่วนประกอบสำคัญ\n",
+        "- input\n",
+        "- process (ไม่มีไม่ได้)\n",
+        "- output\n",
+        "\n",
+        "\n",
+        "เช่น f(x) = 2x"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7LdzlUJcw3xI"
+      },
+      "source": [
+        "##Example\n",
+        "\n",
+        "def grading(score):\n",
+        "  if score >= 80:\n",
+        "    grade = 'A'\n",
+        "  elif score >=75:\n",
+        "    grade = 'B+'\n",
+        "  elif score >=70:\n",
+        "    grade = 'B'\n",
+        "  elif score >=65:\n",
+        "    grade = 'C+'\n",
+        "  elif score >=60:\n",
+        "    grade = 'C'\n",
+        "  elif score >=55:\n",
+        "    grade = 'D+'\n",
+        "  elif score >=50:\n",
+        "    grade = 'D'\n",
+        "  else:\n",
+        "    grade = 'F'\n",
+        "\n",
+        "  return grade\n",
+        "    "
+      ],
+      "execution_count": 81,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bDcrSwFn054B",
+        "outputId": "320589ef-a349-4658-b20c-deb61a2497fc"
+      },
+      "source": [
+        "score = [49,65,70,95,82,55,89,20,77,77,81,59,10]\n",
+        "for i in score:\n",
+        "  print(f'คะแนน {i} ได้เกรด {grading(i)}')"
+      ],
+      "execution_count": 82,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "คะแนน 49 ได้เกรด F\n",
+            "คะแนน 65 ได้เกรด C+\n",
+            "คะแนน 70 ได้เกรด B\n",
+            "คะแนน 95 ได้เกรด A\n",
+            "คะแนน 82 ได้เกรด A\n",
+            "คะแนน 55 ได้เกรด D+\n",
+            "คะแนน 89 ได้เกรด A\n",
+            "คะแนน 20 ได้เกรด F\n",
+            "คะแนน 77 ได้เกรด B+\n",
+            "คะแนน 77 ได้เกรด B+\n",
+            "คะแนน 81 ได้เกรด A\n",
+            "คะแนน 59 ได้เกรด D+\n",
+            "คะแนน 10 ได้เกรด F\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "CKsFc8-v9HUV"
+      },
+      "source": [
+        "Example 2 (ไม่มี input)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-AGI7eB69Kcn"
+      },
+      "source": [
+        "def mypi():\n",
+        "  return 3.14"
+      ],
+      "execution_count": 83,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "5J8aaBgz9mKW",
+        "outputId": "ce870073-32a8-4c69-df76-f31a1d17ec1f",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "r=10\n",
+        "print(f'รัศมี = {r} จะมีเส้นรอบวง = {2*mypi()*r}')"
+      ],
+      "execution_count": 84,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "รัศมี = 10 จะมีเส้นรอบวง = 62.800000000000004\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "W6ktTg_a958R"
+      },
+      "source": [
+        "Example 3 (ไม่มี output)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Xpzdle2F-BS6"
+      },
+      "source": [
+        "def grading_nooutput(score):\n",
+        "  if i >= 80:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ')\n",
+        "  elif i >=75:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด B+ ยินดีด้วย แต่ปกติไม่มีใครสนใจเพราะเป็นได้แค่คนสำรอง')\n",
+        "  elif i >=70:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด B ยินดีด้วย ก็เก่งในสายตาทุกคน ยกเว้นคนในใจ')\n",
+        "  elif i >=65:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด C+ ยินดีด้วย แต่ก็ยังดีไม่พอที่เธอจะหันมาสนใจ')\n",
+        "  elif i >=60:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด C ยินดีด้วย ความพยายามอยู่ที่ไหน ก็ไม่ได้ใจเธออยู่ดี')\n",
+        "  elif i >=55:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด D+ ยินดีด้วย แต่เค้าก็ไม่สนใจคุณหรอกนะ')\n",
+        "  elif i >=50:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด D ยินดีด้วย แต่ D หมายถึงหมานะ คุณเป็นหมาเวลาเพื่อนกลับไปคบกับแฟนเก่าหรอ บรู้ววว')\n",
+        "  else:\n",
+        "    print(f'คะแนนของคุณคือ {i} คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ')"
+      ],
+      "execution_count": 85,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "_r6jZwIN-WLE",
+        "outputId": "84d7ab3e-27de-454f-8643-b98724679507",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "score = [49,65,70,95,82,55,89,20,77,77,81,59,10]\n",
+        "for i in score:\n",
+        "  print(f'คะแนน {i}' , end='' )\n",
+        "  grading_nooutput(i)"
+      ],
+      "execution_count": 86,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "คะแนน 49คะแนนของคุณคือ 49 คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ\n",
+            "คะแนน 65คะแนนของคุณคือ 65 คุณได้เกรด C+ ยินดีด้วย แต่ก็ยังดีไม่พอที่เธอจะหันมาสนใจ\n",
+            "คะแนน 70คะแนนของคุณคือ 70 คุณได้เกรด B ยินดีด้วย ก็เก่งในสายตาทุกคน ยกเว้นคนในใจ\n",
+            "คะแนน 95คะแนนของคุณคือ 95 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนน 82คะแนนของคุณคือ 82 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนน 55คะแนนของคุณคือ 55 คุณได้เกรด D+ ยินดีด้วย แต่เค้าก็ไม่สนใจคุณหรอกนะ\n",
+            "คะแนน 89คะแนนของคุณคือ 89 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนน 20คะแนนของคุณคือ 20 คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ\n",
+            "คะแนน 77คะแนนของคุณคือ 77 คุณได้เกรด B+ ยินดีด้วย แต่ปกติไม่มีใครสนใจเพราะเป็นได้แค่คนสำรอง\n",
+            "คะแนน 77คะแนนของคุณคือ 77 คุณได้เกรด B+ ยินดีด้วย แต่ปกติไม่มีใครสนใจเพราะเป็นได้แค่คนสำรอง\n",
+            "คะแนน 81คะแนนของคุณคือ 81 คุณได้เกรด A ยินดีด้วย คุณคือตัวจริงในใจเธอ\n",
+            "คะแนน 59คะแนนของคุณคือ 59 คุณได้เกรด D+ ยินดีด้วย แต่เค้าก็ไม่สนใจคุณหรอกนะ\n",
+            "คะแนน 10คะแนนของคุณคือ 10 คุณได้เกรด F เสียใจด้วย แต่จะเสียใจกว่าถ้าเขาไม่รักเธอ ว้ายๆ\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "tI5RD5U8ApuE"
+      },
+      "source": [
+        "Example 3 (ไม่มี input และ output)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xHnA3hjvApNj"
+      },
+      "source": [
+        "def draw_rect():\n",
+        "  print('===========')\n",
+        "  print('|         |')\n",
+        "  print('|         |')\n",
+        "  print('===========')"
+      ],
+      "execution_count": 87,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ImOv9-MeA_IN",
+        "outputId": "c1f86b00-4935-4d26-ed99-a7404f30a619",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "draw_rect()\n",
+        "draw_rect()"
+      ],
+      "execution_count": 88,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "===========\n",
+            "|         |\n",
+            "|         |\n",
+            "===========\n",
+            "===========\n",
+            "|         |\n",
+            "|         |\n",
+            "===========\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ii80jPtVBELf"
+      },
+      "source": [
+        "ลักษณะของ input (parameter)\n",
+        "\n",
+        "- จำเป็นต้องใส่\n",
+        "- ไม่จำเป็นต้องใส่"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "XOMHDo_KBXD2"
+      },
+      "source": [
+        "def A(input1, input2 =3):\n",
+        "  return input1+input2"
+      ],
+      "execution_count": 89,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GY97Wr2jB1Od",
+        "outputId": "31c4dd4c-f7d9-42d8-b7d1-488e7c7f05f0",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "A(1)"
+      ],
+      "execution_count": 90,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "4"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 90
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MwZPVlB9CJUa",
+        "outputId": "525db8bd-d18c-40f8-87bc-5133ed844a8c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "A(1,2)"
+      ],
+      "execution_count": 91,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "3"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 91
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Fks-brenC20F"
+      },
+      "source": [
+        "def printlove(input1, input2 = 'Stat' , input3 = 'KKU'):\n",
+        "  print(f'{input1} love {input2} {input3}')"
+      ],
+      "execution_count": 93,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "npVE94s6DUf_",
+        "outputId": "402d2180-eb6b-44ea-9c97-70febb9ed897",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "printlove('kim')"
+      ],
+      "execution_count": 94,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "kim love Stat KKU\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VCcjwpSyDYgJ",
+        "outputId": "5a4c74b5-506a-4f50-bc9f-7af75e0139f7",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "source": [
+        "printlove('kim','SI','Stat')"
+      ],
+      "execution_count": 95,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "kim love SI Stat\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PD4_1kPRFYo9"
+      },
+      "source": [
+        "HW4\n",
+        "\n",
+        "สร้างฟังก์ชั่น\n",
+        "- วาดรูปบ้าน\n",
+        "- วาดต้นไม้"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-nf5Qnl7FX5K"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
