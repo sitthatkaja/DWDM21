@@ -61,7 +61,7 @@
 
 โดยเนื้อหาเกี่ยวกับ ***Meta Data (การอธิบายของข้อมูล), การ Handing Missing Value, การเลือก Data โดยใช้ Value, Outliner และรวมตาราง Group by ด้วย***
 
-[ทฤษฎี : Data Preprocessing ไปใส่มา]()
+[ทฤษฎี : Data Preprocessing](https://github.com/sitthatkaja/DWDM21/blob/main/Chapter%203%20Preprocessing%20.pdf)
 
 [ปฎิบัติ : Chapter 3 : Data Preprocessing](https://github.com/sitthatkaja/DWDM21/blob/main/Data_Preprocessing(Chapter_3).ipynb)
 
@@ -69,20 +69,57 @@
 
 โดยเนื้อหาเกี่ยวกับ ***Basic concept ของ Data warehouse, Data cube and OLAP,ความแตกต่างระหว่าง OLTP และ OLAP,โมเดล ของ Data warehouse และ ETL***
 
-[ทฤษฎี : Data Warehousing and On-line Anaalytical Processing  ไปใส่มา]()
+[ทฤษฎี : Data Warehousing and On-line Anaalytical Processing](https://github.com/sitthatkaja/DWDM21/blob/main/Chapter%204%20OLAP%20.pdf)
 
-บทที่ 5
-- ทฤษฎี :
-- Google Colab :
+### บทที่ 5 : Association Rules
 
-บทที่ 6
-- ทฤษฎี :
-- Google Colab :
+โดยเนื้หาเกี่ยวกับ***การลบ Record ที่มีการ Cancel ออกไป, การเพิ่มคอลัมน์และ Apriori ที่ควรรู้จัก***
 
-บทที่ 7
-- ทฤษฎี :
-- Google Colab :
+[ทฤษฎี : Association Rules](https://github.com/sitthatkaja/DWDM21/blob/main/Chapter%206%20FPBasic.pdf)
 
-การสอบมิดเทอม
+[ปฎิบัติ : Chapter 5 : Association Rules](https://github.com/sitthatkaja/DWDM21/blob/main/Chapter6_Association_Rules.ipynb)
 
-Project
+### บทที่ 6 : Classification
+
+โดยเนื้อหาเกี่ยวกับ***วิธีการทำ Classification ทั้งหมดได้แก่ Decision Tree, KNN & Neural NetworkและEvaluation***
+
+[ทฤษฎี : Classification](https://github.com/sitthatkaja/DWDM21/blob/main/Chapter%208%20Classifier.pdf)
+
+[ปฎิบัติ : Chapter 6 : Classification Decision Tree](https://github.com/sitthatkaja/DWDM21/blob/main/Chapter_7_Classification_(Decision_Tree).ipynb)
+
+[ปฎิบัติ : Chapter 6 : Classification KNN & Neural Network](https://github.com/sitthatkaja/DWDM21/blob/main/Chap7_Classification_(KNN_NN).ipynb)
+
+[ปฎิบัติ : Chapter 6 : Classification Evaluation](https://github.com/sitthatkaja/DWDM21/blob/main/Chap7_Classification_(Evaluation).ipynb)
+
+### บทที่ 7 : Clustering
+
+โดยเนื้อหาเกี่ยวกับ ***การทำ Clustering การจัดสีรวมไปถึง Hierarchical Clustering และ Clustering Evaluation***
+
+[ปฎิบัติ : Chapter 7 : Clustering](https://github.com/sitthatkaja/DWDM21/blob/main/Chap8_Clustering.ipynb)
+
+***
+
+# 👉: ส่วนอื่นๆ
+
+### การสอบมิดเทอม
+
+การสอบกลางภาครายวิชา Data warehouse and Data mining โดยสุ่มข้อทำจำนวน 2 ข้อและคิดโจทย์เอง 1 ข้อ รวมทั้งหมด 10 คะแนน
+
+[Miniexam กลางภาค](https://github.com/sitthatkaja/DWDM21/blob/main/MiniExam.ipynb)
+
+### Project
+
+กลุ่มวากาเมะ ใช้ข้อมูลทั้งหมด 3 ชุดได้แก่ข้อมูลระบบกำจัดของเสียในแต่ละจังหวัด ข้อมูลค่าเฉลี่ยระยะเวลาศึกษาของประชากรแต่ละจังหวัดและข้อมูลรายได้ประชากรที่เข้ามาท่องเที่ยวในแต่ละจังหวัดเพื่อแก้ไขปัญหาคือต้องการทำนายว่าระบบกำจัดของเสียประเภทใดมีการใช้งานมากสุดของแต่ละภาค 
+
+[ปฎิบัติ : Project](https://github.com/sitthatkaja/DWDM21/blob/main/Project.ipynb)
+
+[Slide Presentation : Project](https://github.com/sitthatkaja/DWDM21/blob/main/Present%20%20data%20warehouse%20and%20data%20minning.pdf)
+
+
+### เนื้อหาการเรียนรู้อื่นๆ
+
+คือเนื้อหาของรายวิชา Data warehouse and Data mining ที่น่าสนใจ
+
+[เนื้อหาเพิ่มเติมสำหรับ Data warehouse and Data mining](https://wiki.illinois.edu/wiki/display/cs412/2.+Course+Syllabus+and+Schedule?fbclid=IwAR214O7TRHrJA1oTDfl6czAr6A-jc6Rj_bpjT5dtTWyZcHgtPVTaT5NH1BQ)
+
+***
